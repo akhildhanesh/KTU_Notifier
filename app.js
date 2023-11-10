@@ -38,8 +38,8 @@ const getNotification = () => {
         })
 }
 
-// setInterval(() => {
-//     getNotification()
-// }, 180000) // 3 min
+setInterval(() => {
+    getNotification()
+}, 180000) // 3 min
 
-getNotification()
+// getNotification()
