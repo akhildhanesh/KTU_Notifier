@@ -17,7 +17,7 @@ let getId = require('./db/getId.json')
 const url = `https://api.ktu.edu.in/ktu-web-portal-api/anon/announcemnts`
 
 const getNotification = () => {
-    instance.post(url, { "number": 0, "searchText": "", "size": 10 })
+    instance.post(url, { "number": 0, "searchText": "", "size": 3 })
         .then(data => data.data)
         .then(data => {
             for (let e of data.content.reverse()) {
