@@ -26,7 +26,7 @@ module.exports = {
             btns,
             [Markup.button.url('Whatsapp it', whatsapp_it), Markup.button.url('🔗 Join Channel', 'https://t.me/KTU_Notifier')]
         ])
-        // console.log(`\n \n\n\nㅤㅤ📝ㅤ𝑵𝒐𝒕𝒊𝒇𝒊𝒄𝒂𝒕𝒊𝒐𝒏ㅤ📝 \n\n\n ❖ ${data.subject.toUpperCase()} \n\n 📩 ${data.message} \n\n 🌐 ${data.shortLink} \n\n 📅 ${data.date} | ⏳ ${data.time}`)
-        bot.telegram.sendMessage(process.env.CHAT_ID, `\n \n\n\nㅤㅤ📝ㅤ𝑵𝒐𝒕𝒊𝒇𝒊𝒄𝒂𝒕𝒊𝒐𝒏ㅤ📝 \n\n\n ❖ ${data.subject.toUpperCase()} \n\n 📩 ${data.message} \n\n 🌐 ${data.shortLink} \n\n 📅 ${data.date} | ⏳ ${data.time}`, { reply_markup: keyboard.reply_markup, disable_web_page_preview: true, disable_notification: true }).catch(console.error)
+        // console.log(`\n \n\n\nㅤㅤ📝ㅤ𝑵𝒐𝒕𝒊𝒇𝒊𝒄𝒂𝒕𝒊𝒐𝒏ㅤ📝 \n\n\n ❖ ${data.subject.toUpperCase()} \n\n ${data.message != null ? '📩 '+data.message:''} \n\n 🌐 ${data.shortLink} \n\n 📅 ${data.date} | ⏳ ${data.time}`)
+        bot.telegram.sendMessage(process.env.CHAT_ID, `\n \n\n\nㅤㅤ📝ㅤ𝑵𝒐𝒕𝒊𝒇𝒊𝒄𝒂𝒕𝒊𝒐𝒏ㅤ📝 \n\n\n ❖ ${data.subject.toUpperCase()} \n\n ${data.message != null ? '📩 '+data.message:''} \n\n 🌐 ${data.shortLink} \n\n 📅 ${data.date} | ⏳ ${data.time}`, { reply_markup: keyboard.reply_markup, disable_web_page_preview: true, disable_notification: true }).catch(console.error)
     }
 }

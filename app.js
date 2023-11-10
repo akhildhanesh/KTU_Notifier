@@ -12,12 +12,12 @@ const instance = axios.create({
     })
 })
 
-let getId = require('./id/getId.json')
+let getId = require('./db/getId.json')
 
 const url = `https://api.ktu.edu.in/ktu-web-portal-api/anon/announcemnts`
 
 const getNotification = () => {
-    instance.post(url, { "number": 0, "searchText": "", "size": 3 })
+    instance.post(url, { "number": 0, "searchText": "", "size": 10 })
         .then(data => data.data)
         .then(data => {
             for (let e of data.content.reverse()) {
@@ -31,15 +31,15 @@ const getNotification = () => {
             let jsonData = {
                 id: getId.id
             }
-            writeFile('./id/getId.json', JSON.stringify(jsonData))
+            writeFile('./db/getId.json', JSON.stringify(jsonData))
         })
         .catch(e => {
             console.error(e)
         })
 }
 
-setInterval(() => {
-    getNotification()
-}, 180000) // 3 min
+// setInterval(() => {
+//     getNotification()
+// }, 180000) // 3 min
 
-// getNotification()
+getNotification()
